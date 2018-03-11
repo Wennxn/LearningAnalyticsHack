@@ -16,6 +16,7 @@ Required data
 course date
 course code_module
 
+assessment code_module
 assessment assessment_id
 assessment date
 assessment weight
