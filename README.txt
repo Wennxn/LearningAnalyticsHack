@@ -13,13 +13,19 @@ Setup:
 
 Required data
 
-course date
-course code_module
+courses module_presentation_length
+courses code_module
 
-assessment code_module
-assessment assessment_id
-assessment date
-assessment weight
+assessments code_module
+assessments id_assessment
+assessments date
+assessments weight
 
-studentassessment assessment_id
-studentassessment score
+studentAssessment id_assessment
+studentAssessment score
+
+
+Create view:
+CREATE VIEW assessmentInfo AS 
+SELECT courses.code_module, courses.module_presentation_length, assessments.id_assessment, assessments.date, assessments.weight, studentAssessment.score
+FROM courses JOIN assessments ON courses.code_module = assessments.code_module JOIN studentAssessment ON assessments.id_assessment = studentAssessment.id_assessment;
